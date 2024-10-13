@@ -1,0 +1,81 @@
+// Chronix Calculator
+
+// Function to add two numbers
+function add(a, b) {
+    return a + b
+}
+
+// Function to subtract two numbers
+function subtract(a, b) {
+    return a - b
+}
+
+// Function to multiply two numbers
+function multiply(a, b) {
+    return a * b
+}
+
+// Function to divide two numbers
+function divide(a, b) {
+    if (b == 0) {
+        print("Error: Division by zero is not allowed.")
+        return 0
+    }
+    return a / b
+}
+
+// Function to display menu and get user choice
+function displayMenu() {
+    print("=== Calculator ===")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Exit")
+    print("Select an operation (1-5):")
+}
+
+// Main program loop
+let choice = 0
+while (choice != 5) {
+    displayMenu()
+    choice = input() // Get user input for operation
+
+    // Check if the choice is to exit
+    if (choice == 5) {
+        print("Exiting the calculator.")
+        break
+    }
+
+    // Get numbers from the user
+    print("Enter first number:")
+    let num1 = input()
+    print("Enter second number:")
+    let num2 = input()
+
+    // Convert inputs to numbers
+    let number1 = parseFloat(num1)
+    let number2 = parseFloat(num2)
+
+    // Perform operation based on user choice
+    if (choice == 1) {
+        let result = add(number1, number2)
+        print("Result: " + result)
+    } else if (choice == 2) {
+        let result = subtract(number1, number2)
+        print("Result: " + result)
+    } else if (choice == 3) {
+        let result = multiply(number1, number2)
+        print("Result: " + result)
+    } else if (choice == 4) {
+        let result = divide(number1, number2)
+        print("Result: " + result)
+    } else {
+        print("Invalid choice. Please select a valid operation.")
+    }
+
+    print("") // Print an empty line for better readability
+}
+
+// Exit the program
+exit()
